@@ -1,154 +1,605 @@
-# TarefaPedro*
-{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial;
+/* =========================================================
+   SISTEMA DE LIBERAÇÃO DE ALUNOS - IF
+   Estilo geral
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --verde-if: #006b3f;
+    --verde-if-dark: #004d2c;
+    --verde-light: #e9f6ef;
+
+    --azul: #1e3a5f;
+    --azul-light: #eef4fa;
+
+    --branco: #ffffff;
+    --cinza-50: #f8fafc;
+    --cinza-100: #f1f5f9;
+    --cinza-200: #e2e8f0;
+    --cinza-400: #94a3b8;
+    --cinza-500: #64748b;
+    --cinza-700: #334155;
+    --cinza-900: #0f172a;
+
+    --verde-status: #16a34a;
+    --amarelo-status: #d97706;
+    --vermelho-status: #dc2626;
+
+    --sombra: 0 4px 15px rgba(15, 23, 42, 0.06);
+    --sombra-hover: 0 8px 25px rgba(15, 23, 42, 0.10);
+
+    --raio: 12px;
 }
 
 
-body{
+/* =========================================================
+   BODY
+   ========================================================= */
 
-display:flex;
-background:#f2f4f7;
+body {
+    min-height: 100vh;
+    background: var(--cinza-50);
+    color: var(--cinza-900);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================================
+   MENU LATERAL
+   ========================================================= */
+
+.menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    width: 250px;
+    height: 100vh;
+
+    padding: 28px 18px;
+
+    background: linear-gradient(
+        180deg,
+        var(--verde-if),
+        var(--verde-if-dark)
+    );
+
+    color: white;
+
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.08);
+
+    z-index: 100;
+}
+
+
+/* Logo */
+
+.menu h2 {
+    font-size: 22px;
+    font-weight: 700;
+
+    padding: 0 12px 30px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+    margin-bottom: 20px;
+}
+
+
+/* Links */
+
+.menu a {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    color: rgba(255, 255, 255, 0.85);
+
+    text-decoration: none;
+
+    padding: 13px 15px;
+
+    margin-bottom: 6px;
+
+    border-radius: 9px;
+
+    font-size: 15px;
+
+    transition: 0.2s ease;
+}
+
+
+.menu a:hover {
+    color: white;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    transform: translateX(3px);
+}
+
+
+/* =========================================================
+   CONTEÚDO
+   ========================================================= */
+
+.conteudo {
+    margin-left: 250px;
+
+    min-height: 100vh;
+
+    padding: 35px 45px;
+}
+
+
+/* =========================================================
+   TÍTULOS
+   ========================================================= */
+
+.conteudo h1 {
+    font-size: 28px;
+
+    color: var(--cinza-900);
+
+    margin-bottom: 8px;
+}
+
+
+.conteudo h1::after {
+    content: "";
+    display: block;
+
+    width: 45px;
+    height: 4px;
+
+    background: var(--verde-if);
+
+    border-radius: 10px;
+
+    margin-top: 10px;
+}
+
+
+.conteudo h2 {
+    font-size: 19px;
+
+    color: var(--cinza-700);
+
+    margin-top: 35px;
+    margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+.cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(180px, 1fr));
+
+    gap: 20px;
+
+    margin-top: 30px;
+}
+
+
+.card {
+    position: relative;
+
+    background: var(--branco);
+
+    padding: 23px;
+
+    border-radius: var(--raio);
+
+    border: 1px solid var(--cinza-200);
+
+    box-shadow: var(--sombra);
+
+    transition: 0.2s ease;
+}
+
+
+.card:hover {
+    transform: translateY(-3px);
+
+    box-shadow: var(--sombra-hover);
+}
+
+
+.card h3 {
+    color: var(--cinza-500);
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    margin-bottom: 12px;
+}
+
+
+.card p {
+    color: var(--cinza-900);
+
+    font-size: 28px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   TABELAS
+   ========================================================= */
+
+table {
+    width: 100%;
+
+    border-collapse: separate;
+    border-spacing: 0;
+
+    background: var(--branco);
+
+    border: 1px solid var(--cinza-200);
+
+    border-radius: var(--raio);
+
+    overflow: hidden;
+
+    box-shadow: var(--sombra);
+}
+
+
+th {
+    background: var(--cinza-100);
+
+    color: var(--cinza-500);
+
+    text-align: left;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    padding: 16px 18px;
+
+    border-bottom: 1px solid var(--cinza-200);
+}
+
+
+td {
+    padding: 16px 18px;
+
+    color: var(--cinza-700);
+
+    font-size: 14px;
+
+    border-bottom: 1px solid var(--cinza-100);
+}
+
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+
+tr:hover td {
+    background: #fafdfb;
+}
+
+
+/* =========================================================
+   FORMULÁRIOS
+   ========================================================= */
+
+.formulario {
+    width: 100%;
+
+    max-width: 700px;
+
+    background: var(--branco);
+
+    padding: 30px;
+
+    margin-top: 25px;
+
+    border: 1px solid var(--cinza-200);
+
+    border-radius: var(--raio);
+
+    box-shadow: var(--sombra);
+}
+
+
+.formulario label {
+    display: block;
+
+    color: var(--cinza-700);
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    margin-top: 18px;
+
+    margin-bottom: 7px;
+}
+
+
+.formulario label:first-child {
+    margin-top: 0;
+}
+
+
+input,
+select,
+textarea {
+    width: 100%;
+
+    border: 1px solid var(--cinza-200);
+
+    background: var(--branco);
+
+    color: var(--cinza-900);
+
+    padding: 12px 14px;
+
+    border-radius: 8px;
+
+    outline: none;
+
+    font-size: 14px;
+
+    transition: 0.2s ease;
+}
+
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--verde-if);
+
+    box-shadow: 0 0 0 3px rgba(0, 107, 63, 0.10);
+}
+
+
+textarea {
+    min-height: 120px;
+
+    resize: vertical;
+}
+
+
+/* =========================================================
+   BOTÕES
+   ========================================================= */
+
+button {
+    border: none;
+
+    background: var(--verde-if);
+
+    color: white;
+
+    padding: 12px 20px;
+
+    margin-top: 22px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+button:hover {
+    background: var(--verde-if-dark);
+
+    transform: translateY(-1px);
+
+    box-shadow: 0 4px 10px rgba(0, 107, 63, 0.20);
+}
+
+
+/* =========================================================
+   BOTÃO APROVAR
+   ========================================================= */
+
+.aprovar {
+    background: var(--verde-status);
+
+    margin-top: 0;
+
+    margin-right: 6px;
+}
+
+
+.aprovar:hover {
+    background: #15803d;
+}
+
+
+/* =========================================================
+   BOTÃO RECUSAR
+   ========================================================= */
+
+.recusar {
+    background: var(--vermelho-status);
+
+    margin-top: 0;
+}
+
+
+.recusar:hover {
+    background: #b91c1c;
+}
+
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.status {
+    display: inline-block;
+
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+.pendente {
+    color: #92400e;
+
+    background: #fef3c7;
+}
+
+
+.aprovada {
+    color: #166534;
+
+    background: #dcfce7;
+}
+
+
+.recusada {
+    color: #991b1b;
+
+    background: #fee2e2;
+}
+
+
+/* =========================================================
+   CABEÇALHO
+   ========================================================= */
+
+.topo {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+
+.usuario-logado {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    background: white;
+
+    border: 1px solid var(--cinza-200);
+
+    padding: 8px 14px;
+
+    border-radius: 30px;
+
+    color: var(--cinza-700);
+
+    font-size: 14px;
+}
+
+
+.avatar {
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: var(--verde-light);
+
+    color: var(--verde-if);
+
+    border-radius: 50%;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .cards {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
 
 }
 
 
+@media (max-width: 700px) {
 
-.menu{
+    .menu {
+        position: relative;
 
-width:230px;
-height:100vh;
-background:#003366;
-color:white;
-padding:25px;
+        width: 100%;
+        height: auto;
 
-}
+        padding: 15px;
+    }
 
 
+    .menu h2 {
+        padding-bottom: 15px;
+        margin-bottom: 10px;
+    }
 
-.menu h2{
 
-margin-bottom:30px;
+    .menu a {
+        display: inline-flex;
 
-}
+        padding: 9px 12px;
+    }
 
 
+    .conteudo {
+        margin-left: 0;
 
-.menu a{
+        padding: 25px 18px;
+    }
 
-display:block;
-color:white;
-text-decoration:none;
-padding:15px;
 
-}
+    .cards {
+        grid-template-columns: 1fr;
+    }
 
 
+    .formulario {
+        max-width: 100%;
+    }
 
-.menu a:hover{
 
-background:#0055aa;
+    table {
+        display: block;
 
-}
-
-
-
-.conteudo{
-
-padding:40px;
-width:100%;
-
-}
-
-
-
-.cards{
-
-display:flex;
-gap:20px;
-margin:30px 0;
-
-}
-
-
-
-.card{
-
-background:white;
-padding:25px;
-border-radius:10px;
-width:200px;
-box-shadow:0 2px 5px #aaa;
-
-}
-
-
-
-table{
-
-width:100%;
-background:white;
-border-collapse:collapse;
-margin-top:20px;
-
-}
-
-
-
-th,td{
-
-padding:15px;
-border:1px solid #ddd;
-
-}
-
-
-
-.formulario{
-
-background:white;
-padding:25px;
-width:500px;
-border-radius:10px;
-
-}
-
-
-
-input,select,textarea{
-
-width:100%;
-padding:10px;
-margin:10px 0;
-
-}
-
-
-
-button{
-
-background:#003366;
-color:white;
-border:none;
-padding:12px;
-border-radius:5px;
-cursor:pointer;
-
-}
-
-
-
-.aprovar{
-
-background:green;
-
-}
-
-
-.recusar{
-
-background:red;
+        overflow-x: auto;
+    }
 
 }
